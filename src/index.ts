@@ -571,8 +571,10 @@ function driveUploadCompleteCallback(err: string, gid: string, url: string, file
     if (fileSize) {
       var fileSizeStr = downloadUtils.formatSize(fileSize);
       finalMessage = `<a href='${url}'>${fileName}</a> (${fileSizeStr})`;
+      finalMessage += `<a href='https://gdrive.treexhd.me/0:/${fileName}'>${fileName}</a> (${fileSizeStr})`;
     } else {
       finalMessage = `<a href='${url}'>${fileName}</a>`;
+      finalMessage += `<a href='https://gdrive.treexhd.me/0:/${fileName}'>${fileName}</a> (${fileSizeStr})`;
     }
     if (constants.IS_TEAM_DRIVE && isFolder) {
       finalMessage += '\n\n<i>Folders in Shared Drives can only be shared with members of the drive. Mirror as an archive if you need public links.</i>';
